@@ -22,6 +22,7 @@ export default function MainFirstArea(): JSX.Element {
 
       <StyledMainImageArea>
         <Carousel
+          interval={1000}
           autoPlay={true}
           showStatus={false}
           swipeable={true}

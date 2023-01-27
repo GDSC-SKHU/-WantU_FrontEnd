@@ -6,7 +6,9 @@ export default function Home() {
   return (
     <>
       <Nav />
-      <MainBody children={<MainFirstArea />} />
+      <MainBody>
+        <MainFirstArea />
+      </MainBody>
     </>
   );
 }

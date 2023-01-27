@@ -26,15 +26,15 @@ const Container = styled.div`
   align-items: center;
 
   gap: 10px;
-  
-  background-color: #f0f8ff;
+
+  background-color: white;
   border-radius: 10px;
 `;
 
 const StyledImg = styled.img`
   width: 150px;
   height: 150px;
-  background-color: #f0f8ff;
+  background-color: white;
   @media (max-width: 800px) {
     width: 40px;
     height: 40px;
@@ -42,11 +42,10 @@ const StyledImg = styled.img`
 `;
 
 const StyledP = styled.p`
-  background-color: #f0f8ff;
-
+  background-color: white;
+  font-weight: 650;
   @media (max-width: 800px) {
     margin: 10px;
-
     text-align: center;
     font-size: 14px;
   }
@@ -57,15 +56,15 @@ const StyledBtn = styled.button`
   border: 3px solid #007acc;
   border-radius: 1rem;
   color: black;
-  background-color: #f0f8ff;
-
+  font-weight: 550;
+  background-color: white;
   cursor: pointer;
 
   transition: 0.2s;
 
   &:hover {
     transform: translateY(-2px);
-    color: #f0f8ff;
+    color: white;
     background-color: #007acc;
   }
 

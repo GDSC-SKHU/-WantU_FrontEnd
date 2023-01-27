@@ -33,7 +33,6 @@ const Container = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
   margin-bottom: 2rem;
 `;
 
@@ -42,10 +41,9 @@ const StyledGrid = styled.div`
   grid-template-columns: 15vw 15vw 15vw;
   grid-template-rows: 20vw 20vw;
   gap: 3rem;
-
   margin-top: 3rem;
 
-  @media (max-width: 800px) {
+  @media(max-width: 800px) {
     grid-template-rows: 30vw 30vw;
   }
 `;
@@ -57,6 +55,6 @@ const Item = styled.div`
   gap: 15px;
 
   border-radius: 1rem;
-  box-shadow: 0 5px 5px rgba(158, 158, 158, 1);
-  background-color: #f0f8ff;
+  box-shadow: 0px 5px 5px rgba(158, 158, 158, 1);
+  background-color: white;
 `;

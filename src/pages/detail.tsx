@@ -38,12 +38,15 @@ const Collect = styled.div`
 
   margin-bottom: 2rem;
   margin-left: 2rem;
+
+  @media (max-width: 800px) {
+    margin-top: 5rem;
+    grid-template-columns: 50vw;
+    grid-template-rows: 5vw 8vw 8vw 8vw;
+  }
 `;
 
 const Container = styled.div`
-display: flex;
-flex-direction: column;
-
 background-color: black;
 `;
 
@@ -53,6 +56,10 @@ const StyledH1 = styled.h1`
 
   background-color: black;
   color: #d3d3d3;
+
+  @media (max-width: 800px) {
+    margin-top: 2rem;
+  }
 `;
 
 const Category = styled.div`

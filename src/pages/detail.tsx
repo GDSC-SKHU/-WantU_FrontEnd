@@ -110,8 +110,8 @@ const StyledSpan = styled.span`
 `;
 
 const StyledImg = styled.img`
-  width: 20vw;
-  height: 30vh;
+  width: 25vw;
+  height: 40vh;
 
   margin-bottom: 2rem;
 

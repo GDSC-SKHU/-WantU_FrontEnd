@@ -1,14 +1,7 @@
-import Image from 'next/image';
 import styled, { keyframes } from 'styled-components';
-import { ButtonGroup, Button } from '@mui/material';
 export default function MainBody({ children }: { children: JSX.Element }) {
   return <StyledMainBody>{children}</StyledMainBody>;
 }
-
-const StyledButtonGroup = styled.div`
-  background: none;
-  border: none;
-`;
 
 const boxinit = keyframes`
     0%{

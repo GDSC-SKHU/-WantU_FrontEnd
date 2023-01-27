@@ -38,19 +38,25 @@ const Container = styled.div`
 `;
 
 const StyledGrid = styled.div`
-  margin-top: 3rem;
   display: grid;
-  gap: 3rem;
   grid-template-columns: 15vw 15vw 15vw;
   grid-template-rows: 20vw 20vw;
+  gap: 3rem;
+
+  margin-top: 3rem;
+
+  @media (max-width: 800px) {
+    grid-template-rows: 30vw 30vw;
+  }
 `;
 
 const Item = styled.div`
   display: flex;
   justify-content: center;
-  gap: 15px;
   align-items: center;
+  gap: 15px;
+
   border-radius: 1rem;
-  box-shadow: 5px 5px 5px #007acc;
+  box-shadow: 0 5px 5px rgba(158, 158, 158, 1);
   background-color: #f0f8ff;
 `;

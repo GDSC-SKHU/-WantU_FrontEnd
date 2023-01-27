@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import Nav from '../components/Nav';
 
 export default function Detail() {
@@ -41,11 +41,25 @@ export default function Detail() {
   );
 }
 
+const boxinit = keyframes`
+    0%{
+        opacity: 0;
+    }
+    50%{
+        opacity: 0.5;
+    }
+    100%{
+        opacity: 1;
+    }
+`;
+
 const Collect = styled.div`
   display: grid;
   background-color: black;
   grid-template-columns: 40vw;
   grid-template-rows: 5vw 8vw 8vw 8vw;
+
+  animation: ${boxinit} 1.5s linear;
 
   margin-bottom: 2rem;
   margin-left: 10rem;
@@ -68,6 +82,8 @@ const StyledH1 = styled.h1`
 
   background-color: black;
   color: #d3d3d3;
+
+  animation: ${boxinit} 1.5s linear;
 
   @media (max-width: 800px) {
     margin-top: 2rem;
@@ -114,6 +130,8 @@ const StyledImageWrapper = styled.div`
   flex-direction: column;
   align-items: center;
   width: 100%;
+
+  animation: ${boxinit} 1.5s linear;
 `;
 
 const StyledP = styled.p`

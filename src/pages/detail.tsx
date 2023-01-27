@@ -49,7 +49,7 @@ background-color: black;
 `;
 
 const StyledH1 = styled.h1`
-  padding-top: 5%;
+  padding: 3% 0 0 0;
 
   background-color: black;
   color: #d3d3d3;

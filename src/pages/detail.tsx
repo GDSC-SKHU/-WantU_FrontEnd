@@ -37,23 +37,22 @@ const Collect = styled.div`
   grid-template-rows: 5vw 8vw 8vw 8vw;
 
   margin-bottom: 2rem;
+  margin-left: 2rem;
 `;
 
 const Container = styled.div`
 display: flex;
 flex-direction: column;
-justify-content: center;
-align-items: center;
 
 background-color: black;
 `;
 
 const StyledH1 = styled.h1`
   padding: 3% 0 0 0;
+  margin-left: 4rem;
 
   background-color: black;
   color: #d3d3d3;
-  text-align: center;
 `;
 
 const Category = styled.div`

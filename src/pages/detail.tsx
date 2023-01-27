@@ -33,7 +33,7 @@ export default function Detail() {
 const Collect = styled.div`
   display: grid;
   background-color: black;
-  grid-template-columns: 70vw;
+  grid-template-columns: 40vw;
   grid-template-rows: 5vw 8vw 8vw 8vw;
 
   margin-bottom: 2rem;

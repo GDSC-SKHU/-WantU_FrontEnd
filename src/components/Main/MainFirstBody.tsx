@@ -13,9 +13,9 @@ export default function MainFirstArea(): JSX.Element {
           <StyledH2>최적의 가격을 알려드립니다!</StyledH2>
           <StyledP>지금 바로 브랜드 별로 확인하세요!</StyledP>
           <Button style={{ marginTop: '5%' }} variant="contained">
-          <Link href="/s_list" style={{ textDecoration: "none", color: "white" }}>
-지금 확인하기
-</Link>
+            <Link href="/s_list" style={{ textDecoration: "none", color: "white" }}>
+              지금 확인하기
+            </Link>
           </Button>
         </StyledMainArticle>
       </StyledMainFirstArea>

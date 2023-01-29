@@ -1,8 +1,17 @@
+import axios from 'axios';
+import { useEffect } from 'react';
 import styled from 'styled-components';
 import List from '../components/List';
 import Nav from '../components/Nav';
 
-export default function A_list() {
+const A_list = () => {
+  useEffect(() => {
+    const getapi = async () => {
+      const getdata = await axios.get('/api/lg').then((res) => console.log(res));
+    }
+    getapi();
+  }, [])
+
   return (
     <div>
       <Nav />
@@ -13,6 +22,8 @@ export default function A_list() {
     </div>
   );
 }
+
+export default A_list;
 
 const StyledDiv = styled.div`
   background-color: black;

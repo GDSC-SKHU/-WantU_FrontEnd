@@ -1,7 +1,8 @@
 import styled from 'styled-components';
 import Btn from './Btn';
 
-export default function List() {
+const List = () => {
+
   return (
     <Container>
       <StyledGrid>
@@ -27,6 +28,8 @@ export default function List() {
     </Container>
   );
 }
+
+export default List;
 
 const Container = styled.div`
   display: flex;

@@ -1,7 +1,28 @@
 import styled, { keyframes } from 'styled-components';
 import Nav from '../components/Nav';
 
-export default function Detail() {
+interface Item {
+  imgSrc: string;
+  name: string;
+  id: number;
+  price: number;
+  maker_id: number;
+  link: string;
+}
+
+interface Props {
+  list: Item[];
+}
+
+const Detail = ({ list }: Props) => {
+  // const sort_item = list.sort((a, b) => {
+  //   if(a.price > b.price) {
+  //     return 1;
+  //   }
+  //   return 0;
+  // });
+  // console.log(sort_item);
+
   return (
     <>
       <Nav />
@@ -11,10 +32,11 @@ export default function Detail() {
           <Collect>
             <Category>
               <StyledSpan>기관 명</StyledSpan>
+              <StyledBtn>최저가순</StyledBtn>
               <StyledSpan>가격</StyledSpan>
             </Category>
             <Category>
-              <StyledSpan>학생복지스토어</StyledSpan>
+              <StyledSpan>공식 홈</StyledSpan>
               <StyledSpan>(제품 가격)</StyledSpan>
             </Category>
             <Category>
@@ -22,7 +44,11 @@ export default function Detail() {
               <StyledSpan>(제품 가격)</StyledSpan>
             </Category>
             <Category>
-              <StyledSpan>공식홈</StyledSpan>
+              <StyledSpan>학생복지스토어</StyledSpan>
+              <StyledSpan>(제품 가격)</StyledSpan>
+            </Category>
+            <Category>
+              <StyledSpan>쿠팡</StyledSpan>
               <StyledSpan>(제품 가격)</StyledSpan>
             </Category>
           </Collect>
@@ -41,6 +67,8 @@ export default function Detail() {
   );
 }
 
+export default Detail;
+
 const boxinit = keyframes`
     0%{
         opacity: 0;
@@ -57,7 +85,7 @@ const Collect = styled.div`
   display: grid;
   background-color: black;
   grid-template-columns: 40vw;
-  grid-template-rows: 5vw 8vw 8vw 8vw;
+  grid-template-rows: 4vw 8vw 8vw 8vw 8vw;
 
   animation: ${boxinit} 1.5s linear;
 
@@ -68,7 +96,6 @@ const Collect = styled.div`
     margin-top: 5rem;
     margin-left: 4rem;
     grid-template-columns: 50vw;
-    grid-template-rows: 5vw 8vw 8vw 8vw;
   }
 `;
 
@@ -107,6 +134,10 @@ const Category = styled.div`
 
 const StyledSpan = styled.span`
   color: #d3d3d3;
+`;
+
+const StyledBtn = styled.button`
+cursor: pointer;
 `;
 
 const StyledImg = styled.img`

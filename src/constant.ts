@@ -1,6 +1,17 @@
 interface Props {
-    imgSrc: string,
-    name: string,
+  imgSrc: string;
+  name: string;
 }
 
-export type { Props };
+interface List {
+  id: number;
+  link: string[];
+  name: string;
+  price: number;
+}
+
+interface ListArray {
+  Store: List[];
+}
+
+export type { Props, ListArray, List };

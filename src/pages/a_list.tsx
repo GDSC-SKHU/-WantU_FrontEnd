@@ -5,24 +5,16 @@ import List from '../components/List';
 import Nav from '../components/Nav';
 
 const A_list = () => {
-
-  useEffect(() => {
-    const getapi = async () => {
-      const getdata = await axios.get('/api/apple').then((res) => console.log(res));
-    }
-    getapi();
-  }, [])
-
   return (
     <div>
       <Nav />
       <StyledDiv>
         <StyledH1>Apple</StyledH1>
-        <List />
+        <List typeofList={2} />
       </StyledDiv>
     </div>
   );
-}
+};
 
 export default A_list;
 

@@ -1,18 +1,26 @@
-import Link from 'next/link';
+import React, { MouseEvent } from 'react';
 import styled from 'styled-components';
-import { Props } from '../constant';
-
-const Btn = ({ imgSrc, name }: Props) => {
+import { useRouter } from 'next/router';
+import { List } from '../constant';
+const Btn = ({ list }: { list: List }) => {
+  const router = useRouter();
+  const onClickDetailBut = (e: React.MouseEvent) => {
+    console.log(list);
+    router.push({
+      pathname: '/detail',
+      query: {
+        name: list.name,
+        link: list.link[0],
+        linkSec: list.link[1],
+        linkThird: list.link[2],
+        linkFour: list.link[3],
+        price: list.price,
+      },
+    });
+  };
   return (
     <Container>
-      <StyledImg src={imgSrc} />
-      <StyledP>{name}</StyledP>
-      <Link
-        href="/detail"
-        style={{ textDecoration: 'none', background: '#f0f8ff' }}
-      >
-        <StyledBtn>최저가 보러 가기</StyledBtn>
-      </Link>
+      <StyledBtn onClick={onClickDetailBut}>최저가 보러 가기</StyledBtn>
     </Container>
   );
 };

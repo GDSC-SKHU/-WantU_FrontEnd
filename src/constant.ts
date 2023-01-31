@@ -7,7 +7,7 @@ interface List {
   id: number;
   link: string[];
   name: string;
-  price: number;
+  price: string[];
 }
 
 interface ListArray {

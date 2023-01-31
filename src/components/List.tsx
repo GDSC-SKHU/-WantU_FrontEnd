@@ -1,22 +1,11 @@
 import styled from 'styled-components';
 import Btn from './Btn';
 import axios from 'axios';
+import UseUniqueArray from '../hook/UseUniqueArray';
 import { List as dataList } from '../constant';
 import { useEffect, useState } from 'react';
 const List = ({ typeofList }: { typeofList: number }) => {
   const [lists, setLists] = useState<dataList[]>([]);
-
-  const getUniqueArray = (array: Object) => {
-    const newArray = Object.entries(array);
-    const newdataArray: dataList[] = [];
-    newArray.forEach((each, index) => {
-      if (index % 4 == 0) {
-        newdataArray.push(each[1]);
-      }
-    });
-
-    return newdataArray;
-  };
 
   useEffect(() => {
     const url = '/api/' + String(typeofList);
@@ -26,7 +15,11 @@ const List = ({ typeofList }: { typeofList: number }) => {
     };
     getResponse().then((res) => {
       setLists(res.data);
-      setLists(getUniqueArray(res.data));
+      console.log(res.data);
+      const uniqueArray = UseUniqueArray({ listobject: res.data });
+      if (typeof uniqueArray !== 'undefined') {
+        setLists(uniqueArray);
+      }
     });
     getResponse().catch((err) => console.log(err));
   }, []);
@@ -34,7 +27,12 @@ const List = ({ typeofList }: { typeofList: number }) => {
     <Container>
       <StyledGrid>
         {lists.map((list, index) => (
-          <Item key={list.id}>{list.name}</Item>
+          <>
+            <Item key={list.id}>
+              {list.name}
+              <Btn list={list} />
+            </Item>
+          </>
         ))}
       </StyledGrid>
     </Container>
@@ -65,6 +63,7 @@ const StyledGrid = styled.div`
 
 const Item = styled.div`
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 15px;

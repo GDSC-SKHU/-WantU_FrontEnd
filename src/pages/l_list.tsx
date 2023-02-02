@@ -10,7 +10,7 @@ const A_list = () => {
       <Nav />
       <StyledDiv>
         <StyledH1>LG</StyledH1>
-        <List typeofList={3} />
+        <List type={3} />
       </StyledDiv>
     </div>
   );

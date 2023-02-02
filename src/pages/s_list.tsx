@@ -18,7 +18,7 @@ const S_list = () => {
       <Nav />
       <StyledDiv>
         <StyledH1>SAMSUNG</StyledH1>
-        <List typeofList={1} />
+        <List type={1} />
       </StyledDiv>
     </div>
   );

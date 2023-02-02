@@ -3,26 +3,17 @@ import Btn from './Btn';
 import axios from 'axios';
 import UseUniqueArray from '../hook/UseUniqueArray';
 import { List as dataList } from '../constant';
+import StoreList from '../api/StoreListApi';
 import { useEffect, useState } from 'react';
-const List = ({ typeofList }: { typeofList: number }) => {
+const List = ({ type }: { type: number }) => {
   const [lists, setLists] = useState<dataList[]>([]);
+  const { data, isError, errormsg } = StoreList({ type });
 
   useEffect(() => {
-    const url = '/api/' + String(typeofList);
-    const getResponse = async () => {
-      const ListData = await axios.get(url);
-      return ListData;
-    };
-    getResponse().then((res) => {
-      setLists(res.data);
-      console.log(res.data);
-      const uniqueArray = UseUniqueArray({ listobject: res.data });
-      if (typeof uniqueArray !== 'undefined') {
-        setLists(uniqueArray);
-      }
-    });
-    getResponse().catch((err) => console.log(err));
-  }, []);
+    if (typeof data !== 'undefined') {
+      setLists(data);
+    }
+  }, [data]);
   return (
     <Container>
       <StyledGrid>

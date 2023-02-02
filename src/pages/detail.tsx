@@ -1,20 +1,7 @@
 import styled, { keyframes } from 'styled-components';
 import Nav from '../components/Nav';
-
-interface Item {
-  imgSrc: string;
-  name: string;
-  id: number;
-  price: number;
-  maker_id: number;
-  link: string;
-}
-
-interface Props {
-  list: Item[];
-}
-
-const Detail = ({ list }: Props) => {
+import { useRouter } from 'next/router';
+const Detail = () => {
   // const sort_item = list.sort((a, b) => {
   //   if(a.price > b.price) {
   //     return 1;
@@ -22,18 +9,19 @@ const Detail = ({ list }: Props) => {
   //   return 0;
   // });
   // console.log(sort_item);
+  const router = useRouter().query;
 
   return (
     <>
       <Nav />
       <Container>
-        <StyledH1>(제품 이름)</StyledH1>
+        <StyledH1>{router.name}</StyledH1>
         <StyledDiv>
           <Collect>
             <Category>
               <StyledSpan>기관 명</StyledSpan>
               <StyledBtn>최저가순</StyledBtn>
-              <StyledSpan>가격</StyledSpan>
+              <StyledSpan>{router.price}</StyledSpan>
             </Category>
             <Category>
               <StyledSpan>공식 홈</StyledSpan>
@@ -65,7 +53,7 @@ const Detail = ({ list }: Props) => {
       </Container>
     </>
   );
-}
+};
 
 export default Detail;
 
@@ -137,7 +125,7 @@ const StyledSpan = styled.span`
 `;
 
 const StyledBtn = styled.button`
-cursor: pointer;
+  cursor: pointer;
 `;
 
 const StyledImg = styled.img`
